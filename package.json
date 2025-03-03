@@ -1,14 +1,7 @@
 {
     "name": "node_tutorial",
     "version": "1.0.0",
-    "description": "",
-    "license": "ISC",
-    "author": "",
     "type": "commonjs",
-    "main": "addon.js",
-    "scripts": {
-        "start": "node app.js"
-    },
     "dependencies": {
         "bootstrap": "^5.3.3",
         "lodash": "^4.17.21"
@@ -16,5 +9,8 @@
     "devDependencies": {
         "nodemon": "^3.1.9"
     },
-    "keywords": []
+    "scripts": {
+        "start": "node app.js",
+        "dev": "nodemon app.js"
+    }
 }
