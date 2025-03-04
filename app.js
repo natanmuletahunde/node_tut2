@@ -1,12 +1,9 @@
-const http = require('http');
+const EventEmitter = require('events');
 
-const server = http.createServer((req, res) => {
-    if(err){
-        console.log(err);
-    }
-    console.log(req);
-    res.end('Hello World');
-});
+const eventemitter = new EventEmitter();
 
-console.log('Server is running on port 3000');
-server.listen(5000);
+eventemitter.on('greet', (name)=>{
+   console.log( `Hello ${name}`); });
+
+   eventemitter.emit('greet', 'John');
+    eventemitter.emit('greet', 'Jane');  
