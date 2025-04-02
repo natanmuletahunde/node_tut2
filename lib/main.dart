@@ -15,7 +15,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
      colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const Text(' flutter demo home page'),
+      home: Scaffold(
+        appBar: AppBar(title: Text(
+          'Hello'
+        ),),
+        body: Center(child: Text('Flutter demo home page '),),
+      ),
     );
   }
 }
