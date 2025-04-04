@@ -16,6 +16,8 @@ class AuthScreen extends StatefulWidget {
 
 class _AuthScreenState extends State<AuthScreen> {
   Auth _auth = Auth.signup;
+  final _signupFormKey = GlobalKey<FormState>();
+  final _signinFormKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,19 +43,24 @@ class _AuthScreenState extends State<AuthScreen> {
             },
             activeColor: GlobalVariables.secondaryColor,),
             ),
+               if(_auth == Auth.signup)
+                  Form(key:_signupFormKey,child:Column(
+                    
+                  ), ),
             ListTile(
-            title: const Text('Create Account',
+            title: const Text('Sign-In',
             style: TextStyle(
               fontWeight: FontWeight.bold
             ),
             ),
-            leading: Radio(value: Auth.signup, groupValue:_auth, onChanged: (Auth? value){
+            leading: Radio(value: Auth.signin, groupValue:_auth, onChanged: (Auth? value){
               setState(() {
                 _auth = value!;//  this ! symbol indicate us it can't be null 
               });
             },
             activeColor: GlobalVariables.secondaryColor,),
             )
+
           ],
         )),
     );
