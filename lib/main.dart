@@ -1,4 +1,5 @@
 import 'package:amazon_clone/constants/global_variables.dart';
+import 'package:amazon_clone/router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         )
       )
       ),
+      onGenerateRoute:(Settings)=>generateRoute(Settings) ,
       home: Scaffold(
         appBar: AppBar(title: Text(
           'Hello'
