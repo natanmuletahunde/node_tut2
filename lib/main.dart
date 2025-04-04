@@ -28,24 +28,7 @@ class MyApp extends StatelessWidget {
       )
       ),
       onGenerateRoute:(Settings)=>generateRoute(Settings) ,
-      home: Scaffold(
-        appBar: AppBar(title: Text(
-          'Hello'
-        ),),
-        body: Column(
-          children: [
-            Center(child: Text('Flutter demo home page '),
-            ),
-            Builder(
-              builder: (context) {
-                return ElevatedButton(onPressed: () {
-                  Navigator.pushNamed(context, AuthScreen.routeName);
-                }, child: Text('Click'));
-              }
-            )
-          ],
-        ),
-      ),
+      home: const AuthScreen()
     ); 
   }
 }
