@@ -1,4 +1,5 @@
 import 'package:amazon_clone/constants/global_variables.dart';
+import 'package:amazon_clone/features/auth/screens/auth_screen.dart';
 import 'package:amazon_clone/router.dart';
 import 'package:flutter/material.dart';
 
@@ -35,10 +36,16 @@ class MyApp extends StatelessWidget {
           children: [
             Center(child: Text('Flutter demo home page '),
             ),
-            ElevatedButton(onPressed: () {}, child: Text('Click'))
+            Builder(
+              builder: (context) {
+                return ElevatedButton(onPressed: () {
+                  Navigator.pushNamed(context, AuthScreen.routeName);
+                }, child: Text('Click'));
+              }
+            )
           ],
         ),
       ),
-    );
+    ); 
   }
 }

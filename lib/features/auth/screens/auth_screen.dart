@@ -12,7 +12,9 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+        body: Center(
+          child:Text('Hi'),
+        ),
     );
   }
 }
