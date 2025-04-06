@@ -1,3 +1,4 @@
+import 'package:amazon_clone/common/widgets/custom_textfield.dart';
 import 'package:amazon_clone/constants/global_variables.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,17 @@ class _AuthScreenState extends State<AuthScreen> {
   Auth _auth = Auth.signup;
   final _signupFormKey = GlobalKey<FormState>();
   final _signinFormKey = GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  
   @override
+  void dispose() {
+    super.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    _nameController.dispose();
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: GlobalVariables.greyBackgroundCOlor,
@@ -45,7 +56,12 @@ class _AuthScreenState extends State<AuthScreen> {
             ),
                if(_auth == Auth.signup)
                   Form(key:_signupFormKey,child:Column(
-                    
+                       children: [
+                        CustomTextfield(
+                          controller: _emailController,
+                            hintText: 'Enter your email',
+                        )
+                       ],     
                   ), ),
             ListTile(
             title: const Text('Sign-In',
@@ -55,7 +71,7 @@ class _AuthScreenState extends State<AuthScreen> {
             ),
             leading: Radio(value: Auth.signin, groupValue:_auth, onChanged: (Auth? value){
               setState(() {
-                _auth = value!;//  this ! symbol indicate us it can't be null 
+                _auth = value!;//  this ! symbozl indicate us it can't be null 
               });
             },
             activeColor: GlobalVariables.secondaryColor,),
