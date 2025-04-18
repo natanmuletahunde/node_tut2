@@ -55,14 +55,29 @@ class _AuthScreenState extends State<AuthScreen> {
             activeColor: GlobalVariables.secondaryColor,),
             ),
                if(_auth == Auth.signup)
-                  Form(key:_signupFormKey,child:Column(
-                       children: [
-                        CustomTextfield(
-                          controller: _emailController,
-                            hintText: 'Enter your email',
-                        )
-                       ],     
-                  ), ),
+                  Container(
+                    padding: const EdgeInsets.all(8),
+                    color: GlobalVariables.backgroundColor,
+                    child: Form(key:_signupFormKey,child:Column(
+                         children: [
+                        
+                           CustomTextfield(
+                            controller: _nameController,
+                              hintText: 'Name',
+                          ),
+                        const SizedBox(height: 10),
+                          CustomTextfield(
+                            controller: _emailController,
+                              hintText: 'Email',
+                          ),
+                            const SizedBox(height: 10)
+                          ,   CustomTextfield(
+                            controller: _passwordController,
+                              hintText: ' Password',
+                          ),
+                         ],     
+                    ), ),
+                  ),
             ListTile(
             title: const Text('Sign-In',
             style: TextStyle(
