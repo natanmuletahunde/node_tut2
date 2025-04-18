@@ -36,6 +36,8 @@ class _AuthScreenState extends State<AuthScreen> {
       backgroundColor: GlobalVariables.greyBackgroundCOlor,
         body: SafeArea(child: 
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          
           children: [
             const Text('Welcome',style: TextStyle(
               fontSize: 22,
@@ -43,6 +45,10 @@ class _AuthScreenState extends State<AuthScreen> {
             ),
             ),
             ListTile(
+             tileColor:_auth == Auth.signup ? 
+             GlobalVariables.backgroundColor:
+              GlobalVariables.greyBackgroundCOlor, 
+
             title: const Text('Create Account',
             style: TextStyle(
               fontWeight: FontWeight.bold
@@ -77,7 +83,9 @@ class _AuthScreenState extends State<AuthScreen> {
                               hintText: ' Password',
                           ),
                           const SizedBox(height: 10,),
-                          CustomButton(text: 'Sign Up', onTap: () {})
+                          CustomButton(text: 'Sign Up', onTap: () {
+
+                          })
                          ],     
                     ), ),
                   ),
@@ -94,7 +102,6 @@ class _AuthScreenState extends State<AuthScreen> {
             },
             activeColor: GlobalVariables.secondaryColor,),
             )
-
           ],
         )),
     );
